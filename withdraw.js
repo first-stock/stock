@@ -21,7 +21,7 @@ form.addEventListener('submit', (e)=>{
   const val = parseFloat(amountInput.value || '0');
   const maxVal = parseFloat(max || '0');
   if(isNaN(val) || val <= 0){ showToast('Enter a valid amount'); return }
-  if(val < MIN_WITHDRAW){ showToast('Minimum withdrawal is ₦1,000'); return }
+  if(val < MIN_WITHDRAW){ showToast('Minimum withdrawal is ₦2,000'); return }
   if(max && val > maxVal){ showToast('Amount exceeds available balance'); return }
 
   // Proceed to success page and record withdrawal there
