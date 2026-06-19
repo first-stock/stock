@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bank Details — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1>Bank Details</h1>
+          <p class="tag">Use these details to complete your payment</p>
+        </div>
+      </header>
+
+      <div id="planInfo">
+        <p><strong>Plan:</strong> <span id="planName">—</span></p>
+        <p><strong>Amount:</strong> <span id="planPrice">—</span></p>
+        <p><strong>Daily:</strong> <span id="planDaily">—</span></p>
+      </div>
+
+      <section style="margin-top:12px">
+        <h4 style="margin:0 0 8px 0">Bank account</h4>
+        <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+          <p><strong>Account name:</strong> <span id="accountName">Emmanuel Lucky Josn</span></p>
+          <p><strong>Account number:</strong> <span id="accountNumber">8914669738</span></p>
+          <p><strong>Bank:</strong> <span id="bankName">Palmpay</span></p>
+          <p><strong>Reference:</strong> <span id="paymentRef">use your email or order id</span></p>
+        </div>
+        
+      </section>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button id="paidBtn" class="btn">I've Paid</button>
+        <a href="dashboard.html" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Cancel</a>
+      </div>
+
+      <footer class="card-footer" style="margin-top:14px">
+        <p id="statusMsg"></p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="bank.js"></script>
+</body>
+</html>

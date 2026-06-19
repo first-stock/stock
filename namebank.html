@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Name Bank — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1 id="planTitle">Plan</h1>
+          <p class="tag" id="planTag">Details</p>
+        </div>
+      </header>
+
+      <div id="planBody">
+        <p id="planDesc">Loading...</p>
+        <p><strong>Price:</strong> <span id="planPrice">₦0.00</span></p>
+        <p><strong>Daily:</strong> <span id="planDaily">₦0.00</span></p>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button id="buyBtn" class="btn">Buy Plan</button>
+        <a href="dashboard.html" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Back</a>
+      </div>
+
+      <footer class="card-footer" style="margin-top:14px">
+        <p id="purchaseMsg"></p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="namebank.js"></script>
+</body>
+</html>

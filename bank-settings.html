@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Bank Details — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1>My Bank Details</h1>
+          <p class="tag">Save your bank information for quick payments</p>
+        </div>
+      </header>
+
+      <form id="bankForm" style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+        <label>
+          Account name
+          <input type="text" id="accountName" required placeholder="Full name on account" />
+        </label>
+        <label>
+          Account number
+          <input type="text" id="accountNumber" required placeholder="e.g. 0123456789" />
+        </label>
+        <label>
+          Bank name
+          <input type="text" id="bankName" required placeholder="Bank or provider" />
+        </label>
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <button type="submit" class="btn">Save</button>
+          <a href="withdraw.html" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Back</a>
+        </div>
+      </form>
+
+      <footer class="card-footer" style="margin-top:14px">
+        <p id="msg"></p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="bank-settings.js"></script>
+</body>
+</html>

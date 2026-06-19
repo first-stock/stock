@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1>First Stock</h1>
+          <p class="tag">owning shares in the most popular apps</p>
+        </div>
+      </header>
+
+      <h2 class="title">Create your account</h2>
+
+      <form id="registerForm" novalidate>
+        <div class="row">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="John Doe" required />
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="row">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="6" placeholder="Minimum 6 characters" required />
+        </div>
+
+        <div class="row">
+          <label for="ref">Referral code</label>
+          <input id="ref" name="ref" type="text" placeholder="Referral code (optional)" />
+        </div>
+
+        <div class="row terms">
+          <label><input id="agree" name="agree" type="checkbox" required /> I agree to the <a href="#">Terms</a></label>
+        </div>
+
+        <div class="row">
+          <button id="submitBtn" type="submit" class="btn">Register</button>
+        </div>
+        <div class="row">
+          <a id="loginBtnLink" class="btn" href="login.html" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-align:center;display:inline-block">Login</a>
+        </div>
+      </form>
+
+      <footer class="card-footer">
+        <p>Already have an account? <a id="footerLogin" href="login.html">Login</a></p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

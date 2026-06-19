@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1>First Stock</h1>
+          <p class="tag">owning shares in the most popular apps</p>
+        </div>
+      </header>
+
+      <h2 class="title">Welcome back</h2>
+
+      <form id="loginForm" novalidate>
+        <div class="row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="row">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Your password" required />
+        </div>
+
+        <div class="row">
+          <button id="loginBtn" type="submit" class="btn">Login</button>
+        </div>
+      </form>
+
+      <footer class="card-footer">
+        <p>Don't have an account? <a href="index.html">Register</a></p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="login.js"></script>
+</body>
+</html>

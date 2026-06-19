@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Withdraw Successful — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <header class="card-header">
+        <img class="logo" src="logo.svg" alt="First Stock logo" />
+        <div class="brand">
+          <h1>Withdraw</h1>
+          <p class="tag">Transaction status</p>
+        </div>
+      </header>
+
+      <div style="padding:8px 0">
+        <h2 id="msg">Withdraw successful</h2>
+        <p id="amountText" style="color:var(--muted)"></p>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <a href="dashboard.html" class="btn">Back to Dashboard</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="withdraw-success.js"></script>
+</body>
+</html>

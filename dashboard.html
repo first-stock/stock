@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — First Stock</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav{display:flex;gap:12px;align-items:center}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+    .stat{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    .welcome{font-size:16px;margin:0}
+    @media (max-width:520px){.card-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img class="logo" src="logo.svg" alt="First Stock logo" />
+          <div>
+            <h2 style="margin:0">First Stock</h2>
+            <p class="tag" id="userEmail">user@example.com</p>
+            <p class="tag" id="myRefCodeDisplay" style="margin:4px 0 0 0;font-size:12px;color:var(--muted)"></p>
+          </div>
+        </div>
+        <div class="nav">
+          <button id="logoutBtn" class="btn" style="padding:8px 12px;">Logout</button>
+        </div>
+      </div>
+
+      <h3 class="title">Dashboard</h3>
+      <p class="welcome">Welcome, <span id="userName">User</span></p>
+      <p id="lastDailyCreditDisplay" class="tag" style="margin-top:8px;color:var(--muted);font-size:13px">Last credited: (never)</p>
+
+      <section style="margin-top:10px">
+        <h4 style="margin:0 0 8px 0">Referral</h4>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="refLink" readonly style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;font-size:13px" />
+          <button id="copyRefBtn" class="btn" style="width:auto;padding:8px 10px">Copy</button>
+          <button id="emailRefBtn" class="btn" style="width:auto;padding:8px 10px">Email</button>
+          <a id="refLinkAnchor" href="#" target="_blank" style="display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:inherit;text-decoration:none;border:1px solid rgba(255,255,255,0.04);font-size:13px">Open</a>
+        </div>
+        <div style="margin-top:6px;color:var(--muted);font-size:13px">Share this link to invite someone and earn a 5% referral bonus.</div>
+      </section>
+
+      <div class="card-grid">
+        
+        <div class="stat">
+          <strong>Available Balance</strong>
+          <div id="availableBalance" style="font-size:20px;margin-top:6px">₦0.00</div>
+          <div style="margin-top:8px"><button id="withdrawBtn" class="btn" style="padding:8px 10px">Withdraw</button></div>
+          <div style="margin-top:8px;color:var(--muted);font-size:12px">Stored: <span id="storedBalanceRaw">(none)</span> <button id="resetBalanceBtn" style="margin-left:8px;padding:4px 8px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Reset</button></div>
+        </div>
+
+        <div class="stat">
+          <strong>Daily Income</strong>
+          <div id="dailyIncome" style="font-size:20px;margin-top:6px">₦0.00</div>
+        </div>
+        
+        <div class="stat">
+          <strong>Referral</strong>
+          <div id="refCode" style="margin-top:6px;color:var(--muted)"></div>
+        </div>
+      </div>
+
+      <section style="margin-top:16px">
+        <h4 style="margin:0 0 8px 0">Plans</h4>
+        <div id="plansList" class="card-grid"></div>
+      </section>
+
+      <section style="margin-top:16px">
+        <h4 style="margin:0 0 8px 0">Purchase History</h4>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+          <button id="clearHistoryBtn" class="btn" style="padding:6px 8px">Clear History</button>
+          <div style="color:var(--muted);font-size:13px">Remove stored purchase history from this browser.</div>
+        </div>
+        <div id="purchasesList" class="card-grid" style="grid-template-columns:1fr"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
