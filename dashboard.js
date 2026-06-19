@@ -110,7 +110,7 @@ function renderPlans(){
   list.innerHTML = '';
   PLANS.forEach(p=>{
     const el = document.createElement('div'); el.className='stat';
-    el.innerHTML = `<strong>${p.name}</strong><div style="margin-top:6px">${p.desc}</div><div style="margin-top:8px;font-weight:600">₦${p.price.toFixed(2)}</div><div style="margin-top:6px;color:var(--muted)">Daily: ₦${p.daily.toFixed(2)}</div><div style="margin-top:8px"><button class="btn plan-view" data-id="${p.id}" data-price="${p.price}" data-daily="${p.daily}" style="padding:8px 10px">View</button></div>`;
+    el.innerHTML = `<strong>${p.name}</strong><div style="margin-top:6px">${p.desc}</div><div style="margin-top:8px;font-weight:600">₦${p.price.toFixed(2)}</div><div style="margin-top:6px;color:var(--muted)">Daily: ₦${p.daily.toFixed(2)}</div><div style="margin-top:8px"><button class="plan-view btn" data-id="${p.id}" data-price="${p.price}" data-daily="${p.daily}" style="padding:6px 8px">View</button></div>`;
     list.appendChild(el);
   });
 
@@ -265,6 +265,18 @@ function loadAndShowBalance(){
   return available;
 }
 const currentAvailable = loadAndShowBalance();
+
+// Periodically check for daily credits so users get credited even if the page stays open.
+// Runs every minute and also on focus/visibility change.
+const CREDIT_CHECK_INTERVAL_MS = 60 * 1000; // 1 minute
+setInterval(()=>{
+  try{ loadAndShowBalance(); }catch(e){ console.debug('Periodic balance check failed', e); }
+}, CREDIT_CHECK_INTERVAL_MS);
+
+document.addEventListener('visibilitychange', ()=>{
+  if(document.visibilityState === 'visible') loadAndShowBalance();
+});
+window.addEventListener('focus', ()=> loadAndShowBalance());
 
 // Reset balance button for debugging
 const resetBtn = $qs('#resetBalanceBtn');
